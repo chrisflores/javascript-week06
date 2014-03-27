@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <meta charset="utf-8">
+        <title>Slideshow</title>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    
+    
+    
+    <body>
+    	
+<!--<div id="header" ><h1>ALEXIS MEDINA</h1>
+
+	<div class="col_12"><h4 style="color:#ccc;margin-bottom:40px;" class="center">
+	<ul class="menu">
+<li class="current"><a href="index.html">Home</a></li>
+<li><a href=".html"><span class="icon" data-icon="R"></span>Photography</a>
+	<ul>
+	<li><a href="../portfolio"><span >Portfolio</span></a></li>
+	<li><a href="../travel.html"><span >travel</span></a></li>
+	<li><a href="../contact.html"><span >contact</span></a></li>
+	</ul>	
+<li><a href="Photos">Photos</a></li>
+</ul></pre></h4>
+	</div>
+    -->
+    
+        <img id="image" src="images/1.jpg" alt="">
+        <script src="jquery-1.11.0.js"></script>
+        <script>
+        
+        var position = 1;
+        var maxPosition = 13;
+        
+        function nextImage() {
+            position++;
+            if (position > maxPosition) {
+                position = 1;
+            }
+            $('#image').fadeOut('slow', 'linear', function() {
+                $('#image').attr('src', 'images/' + position + '.jpg');
+                $('#image').fadeIn('slow', "swing");
+            });
+        }
+        
+        $('#image').click(nextImage);
+        
+        </script>
+    </body>
+</html>
