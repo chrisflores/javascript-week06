@@ -17,111 +17,83 @@
      var images = [
       {
         src: 'images/1.jpg',
-        width: 960,
-        height: 640
-    },
-      {
+        width: 942,
+        height: 1200
+    }, {
         src: 'images/2.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 943,
+        height: 1200
+    }, {
         src: 'images/3.jpg',
-        width: 960,
-        height: 640
-    },     
-{
+        width: 943,
+        height: 1200
+    }, {
         src: 'images/4.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 798,
+        height: 1200
+    }, {
         src: 'images/5.jpg',
-        width: 960,
-        height: 640
-    },     
- {
+        width: 1855,
+        height: 1200
+    }, {
         src: 'images/6.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 927,
+        height: 1200
+    }, {
         src: 'images/7.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 1188,
+        height: 1200
+    }, {
         src: 'images/8.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 1804,
+        height: 1200
+    }, {
         src: 'images/9.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 1804,
+        height: 1200
+    }, {
         src: 'images/10.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 943,
+        height: 1200
+    }, {
         src: 'images/11.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 943,
+        height: 1200
+    }, {
         src: 'images/12.jpg',
-        width: 960,
-        height: 640
-    },
- {
+        width: 1185,
+        height: 1200
+    }, {
         src: 'images/13.jpg',
-        width: 960,
-        height: 640
+        width: 886,
+        height: 1200
     }
      ];
-     //display images in order
-          var num = 0;
-          var max = images.length - 1;
-      //anonymous function counter
-          $('#image').click(function(){
-             	num ++;
-        	if (num > max) {
-        		num = 0;
-        		}
-        //assigning images to this
-       	var image = images[num];
-       this.src = image.src;
      
-       //resize images
-       function resizeImage(){
-       var image = images[num];
-       var ratio = image.width / image.height;
-       var width = $(window).width();
-       var height = width / ratio;
-       $('#image').css('width', width);
-       $('#image').css('height', height);    
+      function resizeImage(){
+       	var image = images[num];
+       	var ratio = image.width / image.height;
+       	var width = $(window).width();
+       	var height = width / ratio;
+       	$('#image').css('width', width);
+       	$('#image').css('height', height);    
        }
-       // Resize on page load
-
-       resizeImage();
+       
+        var num = 0;
+        var max = images.length - 1;
+        
+         resizeImage();
        $('#image').click(function(){
        num++;
        if (num > max) {
-       num = 0;
-       }
+      	 num = 0;
+    }
        var image = images[num];
        this.src = image.src;
-       // Resize when the slide show advances
-       resizeImage();     
-       
- });
- // Resize when the window is resized
-$(window).resize(resizeImage);
- });
-
- 
+       resizeImage();  
+       });
+       $(window).resize(resizeImage);
+        
         </script>
     </body>
 </html>
