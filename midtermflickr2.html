@@ -16,14 +16,34 @@
 
        
      <script>
-     var flickr = new Flickr('8e293eb5bc01282cc363187cfb4c954a')
-     flickr.photos.search({
-     text: 'samurai cat',
-     extras: 'o_dims'
      
-     },
-     function(rx) {
+     var flickr = new Flickr('8e293eb5bc01282cc363187cfb4c954a');
+     
+     var arg1 = {
+     text: 'samurai cat',
+     extras: 'o_dims',
+     per_page: 25
+     };
+     
+     var arg2 = {
+     text: 'crazy catlady',
+     extras: 'o_dims',
+     per_page: 25
+     };
+     
+    flickr.photos.search(arg1, function(rx) {
+     
      var images = rx.photos.photo;
+     flickr.photos.search(arg2, function(rx) {
+     images = images.concat(rx.photos.photo);
+     images.sort(function(a, b) {
+              if (Math.random() < 0.5) {
+                return -1;
+              } else {
+                return 1;
+              }
+            });
+            
      var num = 0;
      var max = images.length - 1;
      console.log(images[num]);
@@ -54,7 +74,10 @@
       $('#photo > img').css('height', height);
       }
       $(window).resize(resizeImage);
-      })
+      });
+            });
+
+      
         </script>
     </body>
 </html>
